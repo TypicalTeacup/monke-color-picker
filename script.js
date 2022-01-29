@@ -19,9 +19,9 @@ function rgbToMonke(r,g,b) {
 
 function monkeToRgb(monkeR, monkeG, monkeB){
     return {
-        r: clamp(Math.floor(monkeR*28.333),0,255),
-        g: clamp(Math.floor(monkeG*28.333),0,255),
-        b: clamp(Math.floor(monkeB*28.333),0,255)
+        r: clamp(Math.round(monkeR*28.333),0,255),
+        g: clamp(Math.round(monkeG*28.333),0,255),
+        b: clamp(Math.round(monkeB*28.333),0,255)
       };
 }
 
