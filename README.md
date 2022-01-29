@@ -1,1 +1,1 @@
-# monke-color-picker
+# Monke Color Picker
