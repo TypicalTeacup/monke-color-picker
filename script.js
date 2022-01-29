@@ -25,7 +25,7 @@ function monkeToRgb(monkeR, monkeG, monkeB){
       };
 }
 
-function update(){
+function update(colorInput){
     let inputRgb = hexToRgb(colorInput.value);
     let monke = rgbToMonke(inputRgb.r,inputRgb.g,inputRgb.b);
     document.getElementById("monke").innerHTML = "Monke color: " + monke.r + ", " + monke.g + ", " + monke.b;
@@ -36,8 +36,8 @@ function update(){
 
 window.onload=function(){
     let colorInput = document.getElementById('color');
-    update();
+    update(colorInput);
     colorInput.addEventListener('input', () =>{
-        update();
+        update(colorInput);
   });
 }
