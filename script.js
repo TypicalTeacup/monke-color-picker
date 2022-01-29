@@ -25,16 +25,19 @@ function monkeToRgb(monkeR, monkeG, monkeB){
       };
 }
 
+function update(){
+    let inputRgb = hexToRgb(colorInput.value);
+    let monke = rgbToMonke(inputRgb.r,inputRgb.g,inputRgb.b);
+    document.getElementById("monke").innerHTML = "Monke color: " + monke.r + ", " + monke.g + ", " + monke.b;
+    let rgbResult = monkeToRgb(monke.r, monke.g, monke.b);
+    console.table(inputRgb);console.table(rgbResult);console.table(monke);
+    document.getElementById("rgb").innerHTML = "RGB equivalent: " + rgbResult.r + ", " + rgbResult.g + ", " + rgbResult.b;
+}
+
 window.onload=function(){
     let colorInput = document.getElementById('color');
-
+    update();
     colorInput.addEventListener('input', () =>{
-        let inputRgb = hexToRgb(colorInput.value);
-        let monke = rgbToMonke(inputRgb.r,inputRgb.g,inputRgb.b);
-        
-        document.getElementById("monke").innerHTML = "Monke color: " + monke.r + ", " + monke.g + ", " + monke.b;
-        let rgbResult = monkeToRgb(monke.r, monke.g, monke.b);
-        console.table(inputRgb);console.table(rgbResult);console.table(monke);
-        document.getElementById("rgb").innerHTML = "RGB equivalent: " + rgbResult.r + ", " + rgbResult.g + ", " + rgbResult.b;
-    });
+        update();
+  });
 }
