@@ -32,24 +32,22 @@ function peepeepoopoo(ok,ok2){
 function update(colorInput){
     let inputRgb = hexToRgb(colorInput.value);
     let monke = rgbToMonke(inputRgb.r,inputRgb.g,inputRgb.b);
-    document.getElementById("monke").innerHTML = "Monke color: " + monke.r + ", " + monke.g + ", " + monke.b;
+    peepeepoopoo(monke,["monkeR","monkeG","monkeB"]);
+
     let rgbResult = monkeToRgb(monke.r, monke.g, monke.b);
-    console.table(inputRgb);console.table(rgbResult);console.table(monke);
-    document.getElementById("rgb").innerHTML = "RGB equivalent: " + rgbResult.r + ", " + rgbResult.g + ", " + rgbResult.b;
+    peepeepoopoo(rgbResult,["r","g","b"])
+
+    document.getElementById("results").style = "";
+	document.getElementById("prompt").innerHTML = "<span class=red>" + inputRgb.r 
+                                                + "</span>, <span class=green>" + inputRgb.g 
+                                                + "</span>, <span class=blue>" + inputRgb.b 
+                                                + "</span>";
 }
 
 window.onload=function(){
     let colorInput = document.getElementById('color-input');
 
     colorInput.addEventListener('input', () =>{
-        let inputRgb = hexToRgb(colorInput.value);
-        
-		let monke = rgbToMonke(inputRgb.r,inputRgb.g,inputRgb.b);
-        peepeepoopoo(monke,["monkeR","monkeG","monkeB"])
-
-        let rgbResult = monkeToRgb(monke.r, monke.g, monke.b);
-		peepeepoopoo(rgbResult,["r","g","b"])
-		document.getElementById("results").style = "";
-		document.getElementById("prompt").style = "opacity: 0;";
+        update(colorInput);
     });
 }
