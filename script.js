@@ -29,6 +29,15 @@ function peepeepoopoo(ok,ok2){
     document.getElementById(ok2[2]).innerHTML = ok.b;
 }
 
+function update(colorInput){
+    let inputRgb = hexToRgb(colorInput.value);
+    let monke = rgbToMonke(inputRgb.r,inputRgb.g,inputRgb.b);
+    document.getElementById("monke").innerHTML = "Monke color: " + monke.r + ", " + monke.g + ", " + monke.b;
+    let rgbResult = monkeToRgb(monke.r, monke.g, monke.b);
+    console.table(inputRgb);console.table(rgbResult);console.table(monke);
+    document.getElementById("rgb").innerHTML = "RGB equivalent: " + rgbResult.r + ", " + rgbResult.g + ", " + rgbResult.b;
+}
+
 window.onload=function(){
     let colorInput = document.getElementById('color-input');
 
