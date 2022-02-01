@@ -1,3 +1,5 @@
+let root = document.documentElement;
+
 function hexToRgb(hex) {
     var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
     return result ? {
@@ -42,6 +44,20 @@ function update(colorInput){
                                                 + "</span>, <span class=green>" + inputRgb.g 
                                                 + "</span>, <span class=blue>" + inputRgb.b 
                                                 + "</span>";
+}
+
+function swapTheme(){
+    if(root.style.getPropertyValue("--text-color") === "aliceblue"){
+        root.style.setProperty("--text-color", "black");
+        root.style.setProperty("--header-color", "lightgray");
+        root.style.setProperty("--bg-color", "white");
+        document.getElementById("themeSwap").innerHTML = "dark mode";
+    } else{
+        root.style.setProperty("--text-color", "aliceblue");
+        root.style.setProperty("--header-color", "#161616");
+        root.style.setProperty("--bg-color", "#1a1a1a");
+        document.getElementById("themeSwap").innerHTML = "\"ouch oof my eyes\" mode";
+    }
 }
 
 window.onload=function(){
