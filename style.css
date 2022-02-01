@@ -1,12 +1,94 @@
+html{
+    background-color: #1a1a1a;  
+}
+
 header{
     font-family: "Roboto", sans-serif;
     text-align: center;
     font-weight: 700;
     font-size: 3rem;
+    background-color: #161616;
+    color: aliceblue;
+    width: 100%;
+    height: 3.5rem;
+    border-bottom: #666 solid 1px;
+
+    position:absolute;
+    top:0;
+    left:0;
 }
 
-.text{
+/* text */
+p{
     font-family: "Roboto", sans-serif;
     font-weight: 400;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    color: aliceblue;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+}
+
+#prompt{
+    margin-top: 5rem;
+}
+
+#monke{
+    float: left;
+}
+
+#rgb{
+    float: right;
+}
+
+/* colored text */
+.red{
+    color: red;
+}
+
+.green{
+    color: green;
+}
+
+.blue{
+    color: blue;
+}
+
+/* some divs */
+div[id=results]{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div[id="color"] {
+    width: 50%;
+    margin: 0 auto;
+}
+
+/* color input */
+input[type="color"]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    
+    background-color: transparent;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 3cm;
+    height: 3cm;
+    border: none;
+}
+
+input[type="color"]::-webkit-color-swatch{
+    border-radius: 50%;
+    border: none;
+}
+
+input[type="color"]::-moz-color-swatch{
+    border-radius: 50%;
+    border: none;
 }
