@@ -44,6 +44,31 @@ function update(colorInput){
                                                 + "</span>, <span class=green>" + inputRgb.g 
                                                 + "</span>, <span class=blue>" + inputRgb.b 
                                                 + "</span>";
+    
+    displayImg(rgbResult);
+}
+
+function displayImg(newcolor){
+
+    let canvas = document.getElementById("canvas");
+    let context = canvas.getContext("2d");
+    var img = document.getElementById("fur");
+    canvas.crossOrigin = "Anonymous";
+    
+
+    let imgData = context.getImageData(0,0,64,64);
+    newcolor.r = newcolor.r / 255;
+    newcolor.g = newcolor.g / 255;
+    newcolor.b = newcolor.b / 255;
+    for (var i = 0; i < imgData.length; i += 4) {
+        
+        img.data[i] = Math.floor(255 * r * newcolor.r);
+        img.data[i+1] = Math.floor(255 * g * newcolor.g);
+        img.data[i+2] = Math.floor(255 * b * newcolor.b);
+    }
+
+    context.putImageData(imgData, 0, 0);
+    context.drawImage(img, 10, 10);
 }
 
 function swapTheme(){
