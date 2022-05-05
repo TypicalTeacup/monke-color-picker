@@ -47,21 +47,6 @@ function update(colorInput){
     document.getElementById("preview").style = 'background-color: rgb(' + rgbResult.r * (181 / 255) + ',' + rgbResult.g * (181 / 255) + ',' + rgbResult.b * (181 / 255) + ')'; //rgb(181, 180, 181)
 }
 
-
-function swapTheme(){
-    if(root.style.getPropertyValue("--text-color") === "aliceblue"){
-        root.style.setProperty("--text-color", "black");
-        root.style.setProperty("--header-color", "lightgray");
-        root.style.setProperty("--bg-color", "white");
-        document.getElementById("themeSwap").innerHTML = "dark mode";
-    } else{
-        root.style.setProperty("--text-color", "aliceblue");
-        root.style.setProperty("--header-color", "#161616");
-        root.style.setProperty("--bg-color", "#1a1a1a");
-        document.getElementById("themeSwap").innerHTML = "\"ouch oof my eyes\" mode";
-    }
-}
-
 window.onload=function(){
     let colorInput = document.getElementById('color-input');
 
