@@ -40,11 +40,8 @@ function update(colorInput){
     peepeepoopoo(rgbResult,["r","g","b"])
 
     document.getElementById("results").style = "";
-	document.getElementById("prompt").innerHTML = "<span class=red>" + inputRgb.r 
-                                                + "</span>, <span class=green>" + inputRgb.g 
-                                                + "</span>, <span class=blue>" + inputRgb.b 
-                                                + "</span>";
-    document.getElementById("preview").style = 'background-color: rgb(' + rgbResult.r * (181 / 255) + ',' + rgbResult.g * (181 / 255) + ',' + rgbResult.b * (181 / 255) + ')'; //rgb(181, 180, 181)
+	document.getElementById("prompt").innerHTML = `<span class=red>${inputRgb.r}</span>, <span class=green> ${inputRgb.g}</span>, <span class=blue>${inputRgb.b}</span>`;
+    document.getElementById("preview").style = `background-color: rgb( ${rgbResult.r * (139 / 255)} , ${rgbResult.g * (139 / 255)}, ${rgbResult.b * (139 / 255)})`; 
 }
 
 window.onload=function(){
